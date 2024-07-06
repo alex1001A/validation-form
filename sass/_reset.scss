@@ -12,10 +12,16 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 button,
 input {
-  outline: none;
-  border: none;
+    outline: none;
+    border: none;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
 }
