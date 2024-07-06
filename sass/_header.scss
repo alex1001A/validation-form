@@ -1,0 +1,28 @@
+.header {
+    width: 100%;
+}
+
+.header .container {
+    max-width: 1040px;
+    padding: 24px 56px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-button-container {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.header-button-container > button:nth-of-type(1) {
+    padding: 13px 22px 13px 44px;
+    background: $button-dark-blue-color url('../images/ico-calendar.svg') no-repeat 18%;
+}
+
+.header-button-container > button:nth-of-type(2) {
+    padding: 13px 31px 13px 55px;
+    background: $button-dark-blue-color url('../images/ico-clock.svg') no-repeat 25%;
+}
