@@ -1,13 +1,23 @@
 body {
-    font-family: $main-font-family;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: normal;
-    background: $background-color;
-    color: $main-white-text-color;
+  font-family: $main-font-family;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: normal;
+  background: $background-color;
+  color: $main-white-text-color;
 }
 
 .wrapper {
-    overflow: hidden;
+  overflow: hidden;
 }
 
+// .main {
+//   position: relative;
+
+// }
+
+// .main > img {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }

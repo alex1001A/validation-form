@@ -1,0 +1,27 @@
+@mixin media($breakpoint) {
+  @if $breakpoint == 1440__d1 {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  } @else if $breakpoint == 1200__d2 {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == 992__t1 {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == 768__t2 {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == 576__m1 {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == 360__m2 {
+    @media (max-width: 360px) {
+      @content;
+    }
+  }
+}

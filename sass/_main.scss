@@ -1,4 +1,13 @@
 .hero {
+  margin: 0 0 56px;
+  position: relative;
+}
+
+.hero > img {
+  position: absolute;
+  z-index: -1;
+  top: 40px;
+  right: 40px;
 }
 
 .hero .container {
@@ -8,6 +17,7 @@
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
+  padding: 0 20px;
 }
 
 .hero-content {
@@ -104,8 +114,62 @@
 }
 
 .hero form {
-    max-width: 366px;
-    background: $form-dark-blue-color;
-    padding: 50px 59px;
-    border-radius: 10px;
+  max-width: 366px;
+  padding: 50px 59px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-title {
+  margin: 0 0 20px;
+  font: $font-22-2;
+
+  span {
+    color: $pink-color;
+  }
+}
+
+.input {
+  width: 100%;
+  background: $input-dark-blue-color;
+  padding: 13px 0 14px 22px;
+  border-radius: 5px;
+  color: $main-white-text-color;
+
+  &::placeholder {
+    color: $placeholder-grey-text-color;
+    font: $font-13-1;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 20px 9px $pink-color;
+  }
+}
+
+.form-name {
+  margin: 0 0 14px;
+}
+
+.form-phone {
+  margin: 0 0 14px;
+}
+
+.form-email {
+  margin: 0 0 14px;
+}
+
+.form-submit-button {
+  margin: 0 0 20px;
+}
+
+.policy {
+  color: $main-white-text-color-50;
+  font: $font-12-4;
+
+  .policy-link {
+    text-decoration: underline;
+  }
 }

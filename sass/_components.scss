@@ -1,19 +1,25 @@
 .date-button {
-    color: $main-white-text-color;
-    padding: 13px 0;
-    border-radius: 10px;
-    font: $font-14-1;
+  color: $main-white-text-color;
+  padding: 13px 0;
+  border-radius: 10px;
+  font: $font-14-1;
 }
 
 .pink-button {
-    background: $pink-color;
-    color: $main-white-text-color;
-    padding: 13px 0;
-    border-radius: 10px;
-    font: $font-15-1;
+  background: $pink-color;
+  color: $main-white-text-color;
+  padding: 13px 0;
+  width: 100%;
+  border-radius: 10px;
+  font: $font-15-1;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(0.9);
+  }
 }
 
 form {
-    background: $form-dark-blue-color;
-    
+  background: $form-dark-blue-color;
+  border-radius: 10px;
 }
