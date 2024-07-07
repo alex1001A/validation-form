@@ -435,7 +435,13 @@ form {
   padding-right: 36px !important;
 }
 
-#phone {
+.hero-form > label {
+  display: none;
+  font: 500 11px/16.4px "Gilroy", sans-serif;
+  color: #ff3459;
+}
+
+#input-phone {
   margin-bottom: 14px !important;
 }
 
@@ -476,7 +482,15 @@ form {
 }
 
 .error {
-  border: 1px solid red;
+  border: 1px solid #ff3459;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -260,7 +260,13 @@
   padding-right: 36px !important;
 }
 
-#phone {
+.hero-form > label {
+  display: none;
+  font: $font-11-2;
+  color: $pink-color;
+}
+
+#input-phone {
   margin-bottom: 14px !important;
 }
 

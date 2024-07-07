@@ -1,18 +1,24 @@
 let form = document.querySelector(".hero-form"),
   formInputs = document.querySelectorAll(".input"),
   formEmail = document.querySelector(".form-email"),
-  formPhone = document.querySelector(".form-phone");
+  formPhone = document.querySelector(".form-phone"),
+  formButton = document.querySelector(".form-submit-button");
 
-form.addEventListener("submit", () => {
+function validateEmail(email) {
+  let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+form.onsubmit = function () {
   let emailVal = formEmail.value,
     phoneVal = formPhone.value,
     emptyInputs = Array.from(formInputs).filter((inp) => inp.value === "");
 
   formInputs.forEach((inp) => {
     if (inp.value === "") {
-      inp.classList.add(".error");
+      inp.classList.add("error");
     } else {
-      inp.classList.remove(".error");
+      inp.classList.remove("error");
     }
   });
 
@@ -20,4 +26,12 @@ form.addEventListener("submit", () => {
     console.log("fields not filled");
     return false;
   }
-});
+
+  if (!validateEmail(emailVal)) {
+    console.log("email not valid");
+    formEmail.classList.add("error");
+    return false;
+  } else {
+    formEmail.classList.remove("error");
+  }
+};
