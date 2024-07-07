@@ -44,6 +44,11 @@ body {
   border-radius: 10px;
   font: 600 14px/14px "Gilroy", sans-serif;
 }
+@media (max-width: 768px) {
+  .date-button {
+    border-radius: 6px;
+  }
+}
 
 .pink-button {
   background: #ff3459;
@@ -68,6 +73,11 @@ form {
   margin: 0 0 92px;
   position: relative;
 }
+@media (max-width: 768px) {
+  .header {
+    margin: 0 0 32px;
+  }
+}
 
 .header > img {
   position: absolute;
@@ -78,10 +88,27 @@ form {
   top: 0;
   left: 0;
 }
+@media (max-width: 768px) {
+  .header > img:nth-of-type(1) {
+    display: none;
+  }
+}
 
 .header > img:nth-of-type(2) {
   top: 0;
   right: 0;
+}
+@media (max-width: 768px) {
+  .header > img:nth-of-type(2) {
+    transform: rotate(180deg);
+    top: 550px;
+    left: 0;
+  }
+}
+@media (max-width: 576px) {
+  .header > img:nth-of-type(2) {
+    display: none;
+  }
 }
 
 .header .container {
@@ -92,26 +119,60 @@ form {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .header .container {
+    padding: 20px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .header .container img {
+    width: 101px;
+  }
+}
 
 .header-button-container {
   display: flex;
   gap: 18px;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .header-button-container {
+    gap: 6px;
+  }
+}
 
 .header-button-container > button:nth-of-type(1) {
   padding: 13px 22px 13px 44px;
   background: #302e5a url("../images/ico-calendar.svg") no-repeat 18%;
+}
+@media (max-width: 768px) {
+  .header-button-container > button:nth-of-type(1) {
+    font: 600 11px/8.3px "Gilroy", sans-serif;
+    padding: 7.5px 7px 7.5px 22px;
+    background: #302e5a url("../images/ico-calendar.svg") no-repeat 7%;
+  }
 }
 
 .header-button-container > button:nth-of-type(2) {
   padding: 13px 31px 13px 55px;
   background: #302e5a url("../images/ico-clock.svg") no-repeat 25%;
 }
+@media (max-width: 768px) {
+  .header-button-container > button:nth-of-type(2) {
+    font: 600 11px/8.3px "Gilroy", sans-serif;
+    padding: 7.5px 12px 7.5px 28px;
+    background: #302e5a url("../images/ico-clock.svg") no-repeat 13%;
+  }
+}
 
 .footer {
   height: 83px;
   background: url("../images/footer-type.png") no-repeat 56% 7%;
+}
+@media (max-width: 576px) {
+  .footer {
+    display: none;
+  }
 }
 
 .hero {
@@ -125,6 +186,11 @@ form {
   top: 40px;
   right: 40px;
 }
+@media (max-width: 768px) {
+  .hero > img {
+    display: none;
+  }
+}
 
 .hero .container {
   margin: 0 auto;
@@ -134,6 +200,12 @@ form {
   align-items: flex-start;
   position: relative;
   padding: 0 20px;
+}
+@media (max-width: 992px) {
+  .hero .container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .hero-content {
@@ -145,11 +217,22 @@ form {
   border-radius: 5px;
   font: 600 16px/24px "Gilroy", sans-serif;
 }
+@media (max-width: 576px) {
+  .hero-content .globe {
+    zoom: 0.7;
+  }
+}
 
 .hero-content > h1 {
   font: 800 77px/normal "Gilroy", sans-serif;
   color: #ff3459;
   text-transform: uppercase;
+}
+@media (max-width: 576px) {
+  .hero-content > h1 {
+    font: 800 53px/normal "Gilroy", sans-serif;
+    text-align: center;
+  }
 }
 
 .hero-content > span:nth-of-type(1) {
@@ -159,6 +242,12 @@ form {
   font: 800 23.6px/normal "Gilroy", sans-serif;
   text-transform: uppercase;
   padding: 5px 0 0 10px;
+}
+@media (max-width: 576px) {
+  .hero-content > span:nth-of-type(1) {
+    font: 800 16px/normal "Gilroy", sans-serif;
+    margin: 5px 0 0;
+  }
 }
 .hero-content > span:nth-of-type(1)::after {
   z-index: -1;
@@ -172,16 +261,39 @@ form {
   background: #ff3459;
   border-radius: 5px;
 }
+@media (max-width: 576px) {
+  .hero-content > span:nth-of-type(1)::after {
+    width: 77px;
+    height: 28px;
+  }
+}
 
 .hero-content > span:nth-of-type(2) {
   display: inline-block;
   margin: 0 0 30.2px 30px;
   font: 600 22px/normal "Gilroy", sans-serif;
 }
+@media (max-width: 576px) {
+  .hero-content > span:nth-of-type(2) {
+    font: 600 15px/normal "Gilroy", sans-serif;
+    margin: 0 0 20px 20px;
+  }
+}
 
 .hero-content > p {
   font: 400 18px/26.64px "Gilroy", sans-serif;
-  margin: 0 0 60.6px 0;
+  margin: 0 0 60.6px;
+}
+@media (max-width: 992px) {
+  .hero-content > p {
+    text-align: center;
+    margin: 0 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .hero-content > p {
+    font: 600 14px/20.72px "Gilroy", sans-serif;
+  }
 }
 .hero-content > p span {
   font-weight: 700;
@@ -192,11 +304,42 @@ form {
   flex-direction: column;
   gap: 16px;
 }
+@media (max-width: 992px) {
+  .hero-advantages {
+    display: none;
+  }
+}
+
+.hero-advantages-tablet {
+  display: none;
+}
+@media (max-width: 992px) {
+  .hero-advantages-tablet {
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.hero-advantages-tablet .item {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+}
 
 .hero-advantages .item {
   display: grid;
   grid-template-columns: 20% 80%;
   align-items: center;
+}
+
+.hero-advantages-tablet .item img {
+  align-self: center;
+  justify-self: center;
+}
+.hero-advantages-tablet .item .text-content p {
+  font: 400 12px/19.2px "Gilroy", sans-serif;
 }
 
 .hero-advantages .item img {
@@ -205,6 +348,19 @@ form {
 }
 .hero-advantages .item .text-content p {
   font: 400 12px/19.2px "Gilroy", sans-serif;
+}
+
+.hero-advantages-tablet .item:nth-of-type(1) .text-content > span {
+  text-transform: uppercase;
+  font: 700 13px/15.6px "Gilroy", sans-serif;
+}
+
+.hero-advantages-tablet .item:nth-of-type(2) .text-content > span {
+  font: 700 12px/17.76px "Gilroy", sans-serif;
+}
+
+.hero-advantages-tablet .item:nth-of-type(1) .text-content > span:nth-of-type(1) > span {
+  color: #4252d1;
 }
 
 .hero-advantages .item:nth-of-type(1) .text-content > span {
@@ -229,10 +385,27 @@ form {
   align-items: center;
   text-align: center;
 }
+@media (max-width: 992px) {
+  .hero form {
+    margin: 0 0 36px;
+  }
+}
+@media (max-width: 576px) {
+  .hero form {
+    padding: 40px 21px;
+    margin: 0 0 36px;
+  }
+}
 
 .form-title {
   margin: 0 0 20px;
   font: 700 22px/26px "Gilroy", sans-serif;
+}
+@media (max-width: 576px) {
+  .form-title {
+    font: 700 20px/23.3px "Gilroy", sans-serif;
+    margin: 0 0 18px;
+  }
 }
 .form-title span {
   color: #ff3459;
@@ -259,6 +432,19 @@ form {
 
 .form-phone {
   margin: 0 0 14px;
+  padding-right: 36px !important;
+}
+
+#phone {
+  margin-bottom: 14px !important;
+}
+
+.iti__selected-flag {
+  height: 80%;
+}
+
+.iti__country-list {
+  background: #272d3d;
 }
 
 .form-email {
@@ -268,10 +454,22 @@ form {
 .form-submit-button {
   margin: 0 0 20px;
 }
+@media (max-width: 576px) {
+  .form-submit-button {
+    margin: 0 0 18px;
+    background: #4252d1;
+  }
+}
 
 .policy {
   color: rgba(255, 255, 255, 0.5019607843);
   font: 500 12px/17.88px "Gilroy", sans-serif;
+}
+@media (max-width: 576px) {
+  .policy {
+    font: 500 11px/16.4px "Gilroy", sans-serif;
+    max-width: 224px;
+  }
 }
 .policy .policy-link {
   text-decoration: underline;

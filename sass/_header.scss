@@ -1,45 +1,89 @@
 .header {
-    width: 100%;
-    margin: 0 0 92px;
-    position: relative;
+  width: 100%;
+  margin: 0 0 92px;
+  position: relative;
+
+  @include media(768__t2) {
+    margin: 0 0 32px;
+  }
 }
 
 .header > img {
-    position: absolute;
-    z-index: -1;
+  position: absolute;
+  z-index: -1;
 }
 
 .header > img:nth-of-type(1) {
-top: 0;
-left: 0;
+  top: 0;
+  left: 0;
+
+  @include media(768__t2) {
+    display: none;
+  }
 }
 
 .header > img:nth-of-type(2) {
-top: 0;
-right: 0;
+  top: 0;
+  right: 0;
+
+  @include media(768__t2) {
+    transform: rotate(180deg);
+    top: 550px;
+    left: 0;
+  }
+
+  @include media(576__m1) {
+    display: none;
+  }
 }
 
 .header .container {
-    max-width: 1040px;
-    padding: 24px 56px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1040px;
+  padding: 24px 56px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  @include media(768__t2) {
+      padding: 20px 20px;
+  }
+
+  img {
+    @include media(576__m1) {
+      width: 101px;
+    }
+  }
 }
 
 .header-button-container {
-    display: flex;
-    gap: 18px;
-    align-items: center;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+
+  @include media(768__t2) {
+    gap: 6px;
+  }
 }
 
 .header-button-container > button:nth-of-type(1) {
-    padding: 13px 22px 13px 44px;
-    background: $button-dark-blue-color url('../images/ico-calendar.svg') no-repeat 18%;
+  padding: 13px 22px 13px 44px;
+  background: $button-dark-blue-color url("../images/ico-calendar.svg") no-repeat 18%;
+
+  @include media(768__t2) {
+    font: $font-11-1;
+    padding: 7.5px 7px 7.5px 22px;
+    background: $button-dark-blue-color url("../images/ico-calendar.svg") no-repeat 7%;
+  }
 }
 
 .header-button-container > button:nth-of-type(2) {
-    padding: 13px 31px 13px 55px;
-    background: $button-dark-blue-color url('../images/ico-clock.svg') no-repeat 25%;
+  padding: 13px 31px 13px 55px;
+  background: $button-dark-blue-color url("../images/ico-clock.svg") no-repeat 25%;
+
+  @include media(768__t2) {
+    font: $font-11-1;
+    padding: 7.5px 12px 7.5px 28px;
+    background: $button-dark-blue-color url("../images/ico-clock.svg") no-repeat 13%;
+  }
 }
