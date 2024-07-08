@@ -11,27 +11,23 @@ let form = document.getElementById("form"),
   formName = document.querySelector(".form-name"),
   formButton = document.querySelector(".form-submit-button");
 
-// Валидация электронной почты
 function validateEmail(email) {
   let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 
-// Валидация имени и фамилии
 function validateFullName(fullName) {
-  let re = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,}\s[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,}$/; // Имя и фамилия должны содержать только буквы и быть не менее 2 символов, разделены пробелом
+  let re = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,}\s[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,}$/; 
   return re.test(String(fullName));
 }
 
-
-// Валидация номера телефона (начинается с 0 и содержит 10 цифр)
 function validatePhone(phone) {
-  let re = /^0[0-9]{9}$/; // Номер телефона должен начинаться с 0 и содержать 10 цифр
+  let re = /^0[0-9]{9}$/; 
   return re.test(String(phone));
 }
 
 form.onsubmit = function (event) {
-  event.preventDefault(); // Останавливаем стандартное поведение формы
+  event.preventDefault(); 
   let emptyInputs = Array.from(formInputs).filter((inp) => inp.value === "");
   let isFormValid = true;
 
@@ -69,7 +65,6 @@ form.onsubmit = function (event) {
     return false;
   }
 
-  // Если все проверки пройдены, можно отправить данные
   let message = `<b>Заявка с сайта Powercode Academy!</b>\n`;
   message += `<b>Имя пользователя: </b> ${formName.value}\n`;
   message += `<b>Телефон пользователя: </b> ${formPhone.value}\n`;
