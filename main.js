@@ -1,4 +1,4 @@
-let form = document.querySelector(".hero-form"),
+let form = document.getElementById("form"),
   formInputs = document.querySelectorAll(".input"),
   formEmail = document.querySelector(".form-email"),
   formPhone = document.querySelector(".form-phone"),
@@ -64,5 +64,6 @@ form.onsubmit = function (event) {
   }
 
   // Если все проверки пройдены, можно отправить форму
-  form.submit();
 };
+
+form.submit();
