@@ -1,7 +1,14 @@
+const TOKEN = "7480871221:AAFPUrkJy7_SB9HfozzsqVqACqURDpAgxcs",
+  CHAT_ID = "6163382681",
+  URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+let succes = document.querySelector(".succes-application");
+
 let form = document.getElementById("form"),
   formInputs = document.querySelectorAll(".input"),
   formEmail = document.querySelector(".form-email"),
   formPhone = document.querySelector(".form-phone"),
+  formName = document.querySelector(".form-name"),
   formButton = document.querySelector(".form-submit-button");
 
 // Валидация электронной почты
@@ -10,11 +17,12 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-// Валидация имени
-function validateName(name) {
-  let re = /^[A-Za-zА-Яа-я]{2,}$/; // Имя должно содержать только буквы и быть не менее 2 символов
-  return re.test(String(name));
+// Валидация имени и фамилии
+function validateFullName(fullName) {
+  let re = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,}\s[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,}$/; // Имя и фамилия должны содержать только буквы и быть не менее 2 символов, разделены пробелом
+  return re.test(String(fullName));
 }
+
 
 // Валидация номера телефона (начинается с 0 и содержит 10 цифр)
 function validatePhone(phone) {
@@ -50,9 +58,7 @@ form.onsubmit = function (event) {
     formPhone.classList.remove("error");
   }
 
-  // Предположим, что у нас есть элемент формы для имени с классом .form-name
-  let formName = document.querySelector(".form-name");
-  if (!validateName(formName.value)) {
+  if (!validateFullName(formName.value)) {
     formName.classList.add("error");
     isFormValid = false;
   } else {
@@ -63,7 +69,27 @@ form.onsubmit = function (event) {
     return false;
   }
 
-  // Если все проверки пройдены, можно отправить форму
-};
+  // Если все проверки пройдены, можно отправить данные
+  let message = `<b>Заявка с сайта Powercode Academy!</b>\n`;
+  message += `<b>Имя пользователя: </b> ${formName.value}\n`;
+  message += `<b>Телефон пользователя: </b> ${formPhone.value}\n`;
+  message += `<b>Почта пользователя: </b> ${formEmail.value}`;
 
-form.submit();
+  axios
+    .post(URL_API, {
+      chat_id: CHAT_ID,
+      parse_mode: "html",
+      text: message,
+    })
+    .then((res) => {
+      formName.value = "";
+      formPhone.value = "";
+      formEmail.value = "";
+      succes.style.display = "flex";
+    })
+    .catch((err) => {
+      console.warn(err);
+    });
+
+  return true;
+};
