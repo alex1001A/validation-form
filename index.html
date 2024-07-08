@@ -11,6 +11,7 @@
   <body>
     <div class="wrapper">
       <header class="header">
+        <p class="succes-application">Заявка успешно отправлена!</p>
         <div class="container">
           <img src="./images/powercode-logo.png" alt="" width="182" />
           <div class="header-button-container">
@@ -49,9 +50,9 @@
             </div>
             <form class="hero-form">
               <h2 class="form-title">Запишитесь <span>бесплатно</span> и получите подарок</h2>
-              <input id="input-name" class="input form-name" type="text" name="fullname" placeholder="Ваше имя и фамилия" />
-              <input id="input-phone" class="input form-phone" type="tel" name="phone" placeholder="Ваш номер телефона" />
-              <input id="input-email" class="input form-email" type="email" name="email" placeholder="Ваш email" />
+              <input name="name" id="input-name" class="input form-name" type="text" name="fullname" placeholder="Ваше имя и фамилия" />
+              <input name="phone" id="input-phone" class="input form-phone" type="tel" name="phone" placeholder="Ваш номер телефона" />
+              <input name="email" id="input-email" class="input form-email" type="email" name="email" placeholder="Ваш email" />
               <button class="form-submit-button pink-button" type="submit">Записаться бесплатно</button>
               <p class="policy">Нажимая на кнопку я соглашаюсь с <a class="policy-link" href="">политикой конфиденциальности</a></p>
             </form>
@@ -81,6 +82,8 @@
 
     <script src="./main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <script src="./js/phone.js"></script>
+    <script src="./js/formSubmit.js"></script>
   </body>
 </html>

@@ -3,10 +3,9 @@
   padding: 13px 0;
   border-radius: 10px;
   font: $font-14-1;
-  
+
   @include media(768__t2) {
     border-radius: 6px;
-
   }
 }
 

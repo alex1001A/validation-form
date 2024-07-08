@@ -1,4 +1,4 @@
-const phoneInputField = document.querySelector("#phone");
+const phoneInputField = document.getElementById("input-phone");
 const phoneInput = window.intlTelInput(phoneInputField, {
   initialCountry: "auto",
   geoIpLookup: function (callback) {

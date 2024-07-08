@@ -10,9 +10,7 @@ function validateEmail(email) {
 }
 
 form.onsubmit = function () {
-  let emailVal = formEmail.value,
-    phoneVal = formPhone.value,
-    emptyInputs = Array.from(formInputs).filter((inp) => inp.value === "");
+  let emptyInputs = Array.from(formInputs).filter((inp) => inp.value === "");
 
   formInputs.forEach((inp) => {
     if (inp.value === "") {
@@ -23,15 +21,6 @@ form.onsubmit = function () {
   });
 
   if (emptyInputs.length !== 0) {
-    console.log("fields not filled");
     return false;
-  }
-
-  if (!validateEmail(emailVal)) {
-    console.log("email not valid");
-    formEmail.classList.add("error");
-    return false;
-  } else {
-    formEmail.classList.remove("error");
   }
 };

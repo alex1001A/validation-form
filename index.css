@@ -79,6 +79,20 @@ form {
   }
 }
 
+.succes-application {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
+  background: #4252d1;
+}
+
 .header > img {
   position: absolute;
   z-index: -1;
@@ -418,6 +432,10 @@ form {
   border-radius: 5px;
   color: #ffffff;
 }
+.input::-moz-placeholder {
+  color: #d7d7d7;
+  font: 400 13px/24px "Gilroy", sans-serif;
+}
 .input::placeholder {
   color: #d7d7d7;
   font: 400 13px/24px "Gilroy", sans-serif;
@@ -491,6 +509,4 @@ form {
 
 .hide {
   display: none;
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
